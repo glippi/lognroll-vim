@@ -1,0 +1,50 @@
+*lognroll.txt*	Plugin for simplify logging for JavaScript/TypeScript in Vim
+
+Author:  Gabriele Lippi <https://github.com/glippi>
+
+|introduction|            Introduction and Feature Summary
+|console.log|             Console.log
+|console.info|            Console.info
+|console.warning|         Console.warning
+|console.error|           Console.error
+
+INTRODUCTION					*introduction*
+The idea behind this plugin is very simple: it just offers you a bunch of mappings for using the console functions available in JavaScript/TypeScript, saving you a lot of time during development.
+The mappings are the same for both NORMAL MODE and INSERT MODE.
+Note that the variables will be wrapped inside an object, so if you have a simple variable declaration like:
+>
+  const logMe = 'Please log me'
+
+typing `cll` while in normal mode will generate the following code:
+>
+  console.log({ logMe })
+
+LOG					*console.log*
+The mapping for console.log is `cll`.
+>
+  const logMe = 'Please log me'
+  console.log({ logMe })
+
+INFO					*console.info*
+The mapping for console.info is `cli`.
+>
+  const logMe = 'Please log me'
+  console.info({ logMe })
+
+WARNING					*console.warning*
+The mapping for console.warning is `clw`.
+>
+  const logMe = 'Please log me'
+  console.warning({ logMe })
+
+ERROR					*console.error*
+The mapping for console.error is `cle`.
+>
+  const logMe = 'Please log me'
+  console.error({ logMe })
+
+
+Copyright (c) Gabriele Lippi.  Distributed under the same terms as Vim itself.
+See |license|.
+
+vim:tw=78:ts=8:ft=help:norl:
