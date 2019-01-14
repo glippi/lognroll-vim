@@ -5,7 +5,7 @@ Author:  Gabriele Lippi <https://github.com/glippi>
 |introduction|            Introduction and Feature Summary
 |console.log|             Console.log
 |console.info|            Console.info
-|console.warning|         Console.warning
+|console.warn||            Console.warn
 |console.error|           Console.error
 
 INTRODUCTION					*introduction*
@@ -31,11 +31,11 @@ The mapping for console.info is `cli`.
   const logMe = 'Please log me'
   console.info({ logMe })
 
-WARNING					*console.warning*
-The mapping for console.warning is `clw`.
+WARN					*console.warn*
+The mapping for console.warn is `clw`.
 >
   const logMe = 'Please log me'
-  console.warning({ logMe })
+  console.warn({ logMe })
 
 ERROR					*console.error*
 The mapping for console.error is `cle`.

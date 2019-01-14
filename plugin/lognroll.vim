@@ -6,8 +6,8 @@ nmap cll yiwocll<Esc>p
 imap cli console.info({ })<Esc>==F{a<space>
 nmap cli yiwocli<Esc>p
 
-" console.warning({ $variable })
-imap clw console.warning({ })<Esc>==F{a<space>
+" console.warn({ $variable })
+imap clw console.warn({ })<Esc>==F{a<space>
 nmap clw yiwoclw<Esc>p
 
 " console.error({ $variable })
