@@ -10,30 +10,26 @@ let g:loaded_lognroll_vim = 1
 let g:lognroll_vim#enable_insert_mode =
 \ get(g:, 'lognroll_vim#enable_insert_mode', 0)
 
-" console.log({ $variable })
 if get (g:,'lognroll_vim#enable_insert_mode', 1)
-  imap cll console.log({ })<Esc>==F{a<space>
-endif
-nnoremap <silent> <Plug>lognroll#log yiwoconsole.log({ })<Esc>==F{a<space><Esc>p
-nmap cll <Plug>lognroll#log
+  inoremap <silent> <Plug>lognroll#insert#log console.log({ })<Esc>==F{a<space>
+  inoremap <silent> <Plug>lognroll#insert#info console.info({ })<Esc>==F{a<space>
+  inoremap <silent> <Plug>lognroll#insert#warning console.warn({ })<Esc>==F{a<space>
+  inoremap <silent> <Plug>lognroll#insert#error console.error({ })<Esc>==F{a<space>
 
-" console.info({ $variable })
-if get (g:,'lognroll_vim#enable_insert_mode', 1)
-  imap cli console.info({ })<Esc>==F{a<space>
+  imap cll <Plug>lognroll#insert#log
+  imap cli <Plug>lognroll#insert#info
+  imap clw <Plug>lognroll#insert#warn
+  imap cle <Plug>lognroll#insert#error
 endif
-nnoremap <silent> <Plug>lognroll#info yiwoconsole.info({ })<Esc>==F{a<space><Esc>p
-nmap cli <Plug>lognroll#info
 
-" console.warn({ $variable })
-if get (g:,'lognroll_vim#enable_insert_mode', 1)
-  imap clw console.warn({ })<Esc>==F{a<space>
-endif
-nnoremap <silent> <Plug>lognroll#warn yiwoconsole.warn({ })<Esc>==F{a<space><Esc>p
-nmap clw <Plug>lognroll#warn
+" <Plug> mappings for NORMAL MODE commands
+nnoremap <silent> <Plug>lognroll#normal#log yiwoconsole.log({ })<Esc>==F{a<space><Esc>p
+nnoremap <silent> <Plug>lognroll#normal#info yiwoconsole.info({ })<Esc>==F{a<space><Esc>p
+nnoremap <silent> <Plug>lognroll#normal#warn yiwoconsole.warn({ })<Esc>==F{a<space><Esc>p
+nnoremap <silent> <Plug>lognroll#normal#error yiwoconsole.error({ })<Esc>==F{a<space><Esc>p
 
-" console.error({ $variable })
-if get (g:,'lognroll_vim#enable_insert_mode', 1)
-  imap cle console.error({ })<Esc>==F{a<space>
-endif
-nnoremap <silent> <Plug>lognroll#error yiwoconsole.error({ })<Esc>==F{a<space><Esc>p
-nmap cle <Plug>lognroll#error
+" default mappings
+nmap cll <Plug>lognroll#normal#log
+nmap cli <Plug>lognroll#normal#info
+nmap clw <Plug>lognroll#normal#warn
+nmap cle <Plug>lognroll#normal#error
