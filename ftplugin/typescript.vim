@@ -1,5 +1,5 @@
 " Vim filetype plugin
-" Language:		JavaScript
+" Language:		TypeScript
 " Maintainer:		Gabriele Lippi
 " Last Change:		2019 January 17
 
