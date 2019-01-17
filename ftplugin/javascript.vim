@@ -1,3 +1,8 @@
+" Vim filetype plugin
+" Language:		JavaScript
+" Maintainer:		Gabriele Lippi
+" Last Change:		2019 January 17
+
 " Sanity Checks
 if exists('g:loaded_lognroll_vim')
     finish
@@ -6,6 +11,11 @@ endif
 " Set a special flag used only by this plugin for preventing doubly
 " loading the script.
 let g:loaded_lognroll_vim = 1
+
+" set the 'cpoptions' option to its Vim default value and restore it at the
+" end
+let s:save_cpo = &cpo
+set cpo&vim
 
 let g:lognroll_vim#enable_insert_mode =
 \ get(g:, 'lognroll_vim#enable_insert_mode', 0)
@@ -33,3 +43,5 @@ nmap cll <Plug>lognroll#normal#log
 nmap cli <Plug>lognroll#normal#info
 nmap clw <Plug>lognroll#normal#warn
 nmap cle <Plug>lognroll#normal#error
+
+let &cpo = s:save_cpo
