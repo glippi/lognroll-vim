@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.js, *.jsx setfiletype javascript
+autocmd BufNewFile,BufRead *.js,*.jsx setf javascript

@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.ts, *.tsx setfiletype typescript
+autocmd BufNewFile,BufRead *.ts,*.tsx setf typescript
