@@ -22,7 +22,7 @@ let g:lognroll_vim#enable_insert_mode =
 \ get(g:, 'lognroll_vim#enable_insert_mode', 1)
 
 "Define wether the variable should be logged inside curly brackets or not
-let g:lognroll_vim#disable_brackets =
+let g:lognroll_vim#enable_brackets =
 \ get(g:, 'lognroll_vim#enable_brackets', 1)
 
 let &cpo = s:save_cpo
