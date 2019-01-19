@@ -1,5 +1,5 @@
 # :computer: :metal: lognroll-vim
- > Loggin like there's no tomorrow
+ > Keep on loggin' in the free world
 
  ![jslog-vim.gif](https://github.com/glippi/jslog-vim/blob/master/jslog-vim.gif)
 
