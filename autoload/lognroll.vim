@@ -10,6 +10,6 @@ function! BuildLognrollMappings(logLevel, mode)
       "console." . a:logLevel . "( )<C-[>F(a<space>"
     else
       "yiwoconsole." .a:logLevel . "( )<C-[>F(a<space><C-[>p"
-     endif
+    endif
   endif
-endFunction
+endfunction
