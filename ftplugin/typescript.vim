@@ -1,1 +1,1 @@
-runtime! expand("%:p:h") . "javascript.vim"
+runtime! expand("%:p:h") . "/javascript.vim"
