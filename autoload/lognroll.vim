@@ -1,4 +1,5 @@
-function! BuildLognrollMappings(logLevel, mode)
+echom "Autoloading..."
+function! lognroll#BuildLognrollMappings(logLevel, mode)
   if get(g:, 'lognroll_vim#enable_brackets', '1')
     if a:mode == "insert"
       "console." . a:logLevel . "({ })<C-[>F{a<space>"
