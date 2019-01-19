@@ -4,10 +4,10 @@
 
 if get (g:,'lognroll_vim#enable_insert_mode', 1)
 " <Plug> mappings
-  inoremap <silent> <expr> <Plug>(lnr_insert_log)  lognroll#BuildNormalMappings("log")
-  inoremap <silent> <expr> <Plug>(lnr_insert_info)  lognroll#BuildNormalMappings("info")
-  inoremap <silent> <expr> <Plug>(lnr_insert_warn)  lognroll#BuildNormalMappings("warn")
-  inoremap <silent> <expr> <Plug>(lnr_insert_error) lognroll#BuildNormalMappings("error")
+  inoremap <silent> <expr> <Plug>(lnr_insert_log)  lognroll#BuildInsertMappings("log")
+  inoremap <silent> <expr> <Plug>(lnr_insert_info)  lognroll#BuildINsertMappings("info")
+  inoremap <silent> <expr> <Plug>(lnr_insert_warn)  lognroll#BuildInsertMappings("warn")
+  inoremap <silent> <expr> <Plug>(lnr_insert_error) lognroll#BuildInsertMappings("error")
 
   " default mappings
   if !hasmapto('<Plug>(lnr_insert_log)')
@@ -31,16 +31,16 @@ endif
 
 " <Plug> mappings
 nnoremap <silent> <Plug>(lnr_normal_log)
-  \ :<C-U>call lognroll#BuildLognrollNormalMappings("log")<CR>
+  \ :<C-U>call lognroll#BuildNormalMappings("log")<CR>
 
 nnoremap <silent> <Plug>(lnr_normal_info)
-  \ :<C-U>call lognroll#BuildLognrollNormalMappings("info")<CR>
+  \ :<C-U>call lognroll#BuildNormalMappings("info")<CR>
 
 nnoremap <silent> <Plug>(lnr_normal_warn)
-  \ :<C-U>call lognroll#BuildLognrollNormalMappings("warn")<CR>
+  \ :<C-U>call lognroll#BuildNormalMappings("warn")<CR>
 
 nnoremap <silent> <Plug>(lnr_normal_error)
-  \ :<C-U>call lognroll#BuildLognrollNormalMappings("error")<CR>
+  \ :<C-U>call lognroll#BuildNormalMappings("error")<CR>
 
 " default mappings
 if !hasmapto('<Plug>(lnr_normal_log)')
