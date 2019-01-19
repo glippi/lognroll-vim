@@ -5,13 +5,13 @@
 if get (g:,'lognroll_vim#enable_insert_mode', 1)
 " <Plug> mappings
   inoremap <silent> <Plug>(lnr_insert_log)
-    \ <C-[>:<C-U>call lognroll#BuildLognrollMappings("log", "normal")<CR>
+    \ <C-[>:<C-U>call lognroll#BuildLognrollMappings("log", "insert")<CR>
   inoremap <silent> <Plug>(lnr_insert_info)
-    \ <C-[>:<C-U>call lognroll#BuildLognrollMappings("info", "normal")<CR>
+    \ <C-[>:<C-U>call lognroll#BuildLognrollMappings("info", "insert")<CR>
   inoremap <silent> <Plug>(lnr_insert_warn)
-    \ <C-[>:<C-U>call lognroll#BuildLognrollMappings("warn", "normal")<CR>
+    \ <C-[>:<C-U>call lognroll#BuildLognrollMappings("warn", "insert")<CR>
   inoremap <silent> <Plug>(lnr_insert_error)
-    \ <C-[>:<C-U>call lognroll#BuildLognrollMappings("error", "normal")<CR>
+    \ <C-[>:<C-U>call lognroll#BuildLognrollMappings("error", "insert")<CR>
 
   " default mappings
   if !hasmapto('<Plug>(lnr_insert_log)')
