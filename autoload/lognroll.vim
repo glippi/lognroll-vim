@@ -1,15 +1,16 @@
-function! lognroll#BuildLognrollMappings(logLevel, mode)
+function! lognroll#BuildLognrollNormalMappings(logType)
   if get(g:, 'lognroll_vim#enable_brackets', '1')
-    if a:mode == "insert"
-      return "console." . a:logLevel . "({ })\<C-[>F{\a\<space>"
-    else
-      execute "normal! yiwoconsole." . a:logLevel . "({ })\<C-[>F{a\<space>\<C-[>p<CR>"
-    endif
+    execute "normal! yiwoconsole." . a:logType . "({ })\<C-[>F{a\<space>\<C-[>p<CR>"
   else
-    if a:mode == "insert"
-      "console." . a:logLevel . "( )<C-[>F(a<space>"
-    else
-      "yiwoconsole." .a:logLevel . "( )<C-[>F(a<space><C-[>p"
-    endif
+    execute "normal! yiwoconsole." . a:logType . "( )\<C-[>F(a\<space>\<C-[>p<CR>"
+  endif
+endfunction
+
+
+function! lognroll#BuildLognrollInsertMappings(logType)
+  if get(g:, 'lognroll_vim#enable_brackets', '1')
+    return "console." . a:logType . "({ })\<C-[>F{\a\<space>"
+  else
+    return "console." . a:logType . "( )<C-[>F(a\<space>"
   endif
 endfunction
