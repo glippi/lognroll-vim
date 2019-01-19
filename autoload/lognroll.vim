@@ -2,11 +2,11 @@ echom "Autoloading..."
 function! lognroll#BuildLognrollMappings(logLevel, mode)
   if get(g:, 'lognroll_vim#enable_brackets', '1')
     echom a:logLevel
-    echom a:logLevel
     if a:mode == "insert"
-      execute "normal! console." . a:logLevel . "({ })\<C-[>F{a\<space>"
+      echom a:mode
+      execute "normal! iconsole." . a:logLevel . "({ })\<C-[>F{a\<space>"
     else
-      execute "normal! yiwoconsole." . a:logLevel . "({ })\<C-[>F{a\<space>\<C-[>p"
+      execute "normal! yiwoconsole." . a:logLevel . "({ })\<C-[>F{a\<space>\<C-[>p<CR>"
     endif
   else
     if a:mode == "insert"
