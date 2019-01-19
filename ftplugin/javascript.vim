@@ -42,6 +42,18 @@ nnoremap <silent> <Plug>(lnr_normal_warn)
 nnoremap <silent> <Plug>(lnr_normal_error)
   \ :<C-U>call lognroll#BuildNormalMappings("error")<CR>
 
+nnoremap <silent> <Plug>(lnr_normal_logargs)
+  \ :<C-U>call lognroll#BuildNormalMappingsArgs("log")<CR>
+
+nnoremap <silent> <Plug>(lnr_normal_infoargs)
+  \ :<C-U>call lognroll#BuildNormalMappingsArgs("info")<CR>
+
+nnoremap <silent> <Plug>(lnr_normal_warnargs)
+  \ :<C-U>call lognroll#BuildNormalMappingsArgs("warn")<CR>
+
+nnoremap <silent> <Plug>(lnr_normal_errorargs)
+  \ :<C-U>call lognroll#BuildNormalMappingsArgs("error")<CR>
+
 " default mappings
 if !hasmapto('<Plug>(lnr_normal_log)')
   nmap col <Plug>(lnr_normal_log)
@@ -54,4 +66,17 @@ if !hasmapto('<Plug>(lnr_normal_warn)')
 endif
 if !hasmapto('<Plug>(lnr_normal_error)')
   nmap coe <Plug>(lnr_normal_error)
+endif
+
+if !hasmapto('<Plug>(lnr_normal_logargs')
+  nmap cola <Plug>(lnr_normal_logargs)
+endif
+if !hasmapto('<Plug>(lnr_normal_infoargs')
+  nmap coia <Plug>(lnr_normal_infoargs)
+endif
+if !hasmapto('<Plug>(lnr_normal_warnargs')
+  nmap cowa <Plug>(lnr_normal_warnargs)
+endif
+if !hasmapto('<Plug>(lnr_normal_errorargs')
+  nmap cowe <Plug>(lnr_normal_errorargs)
 endif
