@@ -5,7 +5,7 @@
 if get (g:,'lognroll_vim#enable_insert_mode', 1)
 " <Plug> mappings
   inoremap <silent> <expr> <Plug>(lnr_insert_log)
-    \ lognroll#BuildLognrollMappings("log", "insert")<CR>
+    \ lognroll#BuildLognrollMappings("log", "insert")
   inoremap <silent> <Plug>(lnr_insert_info)
     \ <C-[>:<C-U>call lognroll#BuildLognrollMappings("info", "insert")<CR>
   inoremap <silent> <Plug>(lnr_insert_warn)
