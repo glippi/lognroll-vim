@@ -1,65 +1,50 @@
-" Vim filetype plugin
-" Language:		JavaScript
-" Maintainer:		Gabriele Lippi
-" Last Change:		2019 January 19
-
-" Sanity Checks
-if exists('g:loaded_lognroll_vim')
-    finish
-endif
-
-" Set a special flag used only by this plugin for preventing doubly
-" loading the script.
-let g:loaded_lognroll_vim = 1
-
-" set the 'cpoptions' option to its Vim default value and restore it at the
-" end
-let s:save_cpo = &cpo
-set cpo&vim
-
-let g:lognroll_vim#enable_insert_mode =
-\ get(g:, 'lognroll_vim#enable_insert_mode', 0)
+" " " " " " " "
+" INSERT MODE "
+" " " " " " " "
 
 if get (g:,'lognroll_vim#enable_insert_mode', 1)
-  inoremap <silent> <Plug>lognroll#insert#log console.log({ })<Esc>F{a<space>
-  inoremap <silent> <Plug>lognroll#insert#info console.info({ })<Esc>F{a<space>
-  inoremap <silent> <Plug>lognroll#insert#warning console.warn({ })<Esc>F{a<space>
-  inoremap <silent> <Plug>lognroll#insert#error console.error({ })<Esc>F{a<space>
+" <Plug> mappings
+  inoremap <silent> <Plug>(lnr_insert_log) :call BuildLognrollMappings("log", "insert")<Return>
+  inoremap <silent> <Plug>(lnr_insert_info) :call BuildLognrollMappings("info", "insert")<Return>
+  inoremap <silent> <Plug>(lnr_insert_warn) :call BuildLognrollMappings("warn", "insert")<Return>
+  inoremap <silent> <Plug>(lnr_insert_error) :call BuildLognrollMappings("error", "insert")<Return>
+
+  " default mappings
+  if !hasmapto('<Plug>(lnr_insert_log)')
+    imap col <Plug>(lnr_insert_log)
+  endif
+  if !hasmapto('<Plug>(lnr_insert_info)')
+    imap coi <Plug>(lnr_insert_info)
+  endif
+  if !hasmapto('<Plug>(lnr_insert_warn)')
+    imap cow <Plug>(lnr_insert_warn)
+  endif
+  if !hasmapto('<Plug>(lnr_insert_error)')
+    imap coe <Plug>(lnr_insert_error)
+  endif
+endif
+
+
+" " " " " " " "
+" NORMAL MODE "
+" " " " " " " "
+
+" <Plug> mappings
+nnoremap <silent> <Plug>(lnr_normal_log) :call BuildLognrollMappings("log", "normal")<Return>
+nnoremap <silent> <Plug>(lnr_normal_info) :call BuildLognrollMappings("info", "normal")<Return>
+nnoremap <silent> <Plug>(lnr_normal_warn) :call BuildLognrollMappings("warn", "normal")<Return>
+nnoremap <silent> <Plug>(lnr_normal_error) :call BuildLognrollMappings("error", "normal")<Return>
 
 " default mappings
-if !hasmapto('<Plug>lognroll#insert#log')
-  imap cll <Plug>lognroll#insert#log
+if !hasmapto('<Plug>(lnr_normal_log)')
+  nmap col <Plug>(lnr_normal_log)
 endif
-if !hasmapto('<Plug>lognroll#insert#info')
-  imap cli <Plug>lognroll#insert#info
+if !hasmapto('<Plug>(lnr_normal_info)')
+  nmap coi <Plug>(lnr_normal_info)
 endif
-if !hasmapto('<Plug>lognroll#insert#warn')
-  imap clw <Plug>lognroll#insert#warn
+if !hasmapto('<Plug>(lnr_normal_warn)')
+  nmap cow <Plug>(lnr_normal_warn)
 endif
-if !hasmapto('<Plug>lognroll#insert#error')
-  imap cle <Plug>lognroll#insert#error
+if !hasmapto('<Plug>(lnr_normal_error)')
+  nmap coe <Plug>(lnr_normal_error)
 endif
-endif
-
-" <Plug> mappings for NORMAL MODE commands
-nnoremap <silent> <Plug>lognroll#normal#log yiwoconsole.log({ })<Esc>F{a<space><Esc>p
-nnoremap <silent> <Plug>lognroll#normal#info yiwoconsole.info({ })<Esc>F{a<space><Esc>p
-nnoremap <silent> <Plug>lognroll#normal#warn yiwoconsole.warn({ })<Esc>F{a<space><Esc>p
-nnoremap <silent> <Plug>lognroll#normal#error yiwoconsole.error({ })<Esc>F{a<space><Esc>p
-
-
-" default mappings
-if !hasmapto('<Plug>lognroll#normal#log')
-  nmap cll <Plug>lognroll#normal#log
-endif
-if !hasmapto('<Plug>lognroll#normal#info')
-  nmap cli <Plug>lognroll#normal#info
-endif
-if !hasmapto('<Plug>lognroll#normal#warn')
-  nmap clw <Plug>lognroll#normal#warn
-endif
-if !hasmapto('<Plug>lognroll#normal#error')
-  nmap cle <Plug>lognroll#normal#error
-endif
-
-let &cpo = s:save_cpo
