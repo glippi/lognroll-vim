@@ -4,7 +4,7 @@ function! lognroll#BuildLognrollMappings(logLevel, mode)
     echom a:logLevel
     if a:mode == "insert"
       echom a:mode
-      execute "normal! iconsole." . a:logLevel . "({ })\<C-[>F{a\<space>"
+      execute "normal! iconsole." . a:logLevel . "({ })\<C-[>F{\a<space>"
     else
       execute "normal! yiwoconsole." . a:logLevel . "({ })\<C-[>F{a\<space>\<C-[>p<CR>"
     endif
