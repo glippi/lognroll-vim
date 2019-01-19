@@ -1,13 +1,13 @@
-"ut " " " " " " "
+" " " " " " " "
 " INSERT MODE "
 " " " " " " " "
 
 if get (g:,'lognroll_vim#enable_insert_mode', 1)
 " <Plug> mappings
-  inoremap <silent> <expr> <Plug>(lnr_insert_log) lognroll#BuildLognrollInsertMappings("log")
-  inoremap <silent> <expr> <Plug>(lnr_insert_info) lognroll#BuildLognrolInsertlMappings("info")
-  inoremap <silent> <expr> <Plug>(lnr_insert_warn) lognroll#BuildLognrolInsertlMappings("warn")
-  inoremap <silent> <expr> <Plug>(lnr_insert_error) lognroll#BuildLognrolInsertlMappings("error")
+  inoremap <silent> <expr> <Plug>(lnr_insert_log)  lognroll#BuildNormalMappings("log")
+  inoremap <silent> <expr> <Plug>(lnr_insert_info)  lognroll#BuildNormalMappings("info")
+  inoremap <silent> <expr> <Plug>(lnr_insert_warn)  lognroll#BuildNormalMappings("warn")
+  inoremap <silent> <expr> <Plug>(lnr_insert_error) lognroll#BuildNormalMappings("error")
 
   " default mappings
   if !hasmapto('<Plug>(lnr_insert_log)')
