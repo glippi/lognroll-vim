@@ -33,7 +33,7 @@ endif
     let s:mapping = "co" . s:firsLetter
 
     " <Plug> mappings
-    execute "nnoremap <silent> " . s:plugCommand . ":<C-U>call lognroll#BuildInsertMappings(". "'" . g:lognroll_console . "'" . ',' . "'" .  action . "'" . ")"
+    execute "nnoremap <silent> " . s:plugCommand . ":<C-U>call lognroll#BuildNormalMappings(". "'" . g:lognroll_console . "'" . ',' . "'" .  action . "'" . ")"
     " default mappings
     if !hasmapto(s:mapping)
       execute "nmap " . s:mapping . " " . s:plugCommand
