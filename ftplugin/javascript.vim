@@ -7,7 +7,6 @@ let g:lognroll_js_actions =
 " " " " " " " "
 " INSERT MODE "
 " " " " " " " "
-
 if get (g:,'lognroll_vim#enable_insert_mode', 1)
 
   for action in g:lognroll_js_actions
@@ -29,7 +28,6 @@ endif
 " " " " " " " "
 " NORMAL MODE "
 " " " " " " " "
-
   for action in g:lognroll_js_actions
     let s:firsLetter = action[0]
     let s:plugCommand = "<Plug>(lnr_normal_" . action . ")"
@@ -43,15 +41,16 @@ endif
     endif
   endfor
 
-"if !hasmapto('<Plug>(lnr_normal_logargs')
-"  nmap cola <Plug>(lnr_normal_logargs)
-"endif
-"if !hasmapto('<Plug>(lnr_normal_infoargs')
-"  nmap coia <Plug>(lnr_normal_infoargs)
-"endif
-"if !hasmapto('<Plug>(lnr_normal_warnargs')
-"  nmap cowa <Plug>(lnr_normal_warnargs)
-"endif
-"if !hasmapto('<Plug>(lnr_normal_errorargs')
-"  nmap cowe <Plug>(lnr_normal_errorargs)
-"endif
+  "log all arguments of a function
+  for action in g:lognroll_js_actions
+    let s:firsLetter = action[0]
+    let s:plugCommand = "<Plug>(lnr_normal_" . action . "args)"
+    let s:mapping = "co" . s:firsLetter . "a"
+
+    " <Plug> mappings
+    execute "nnoremap <silent> " . s:plugCommand . " :<C-U>call lognroll#BuildNormalMappingsArgs(". "'" . g:lognroll_js_console . "'" . ',' . "'" .  action . "'" . ")<CR>"
+    " default mappings
+    if !hasmapto(s:mapping)
+      execute "nmap " . s:mapping . " " . s:plugCommand
+    endif
+  endfor
