@@ -107,7 +107,7 @@ The following is the table of the available `<Plug>` command:
 
 | Plug command | Mode | Default Map |
 | ------------ | ---- | ----------- |
-| <Plug>(lnr_insert_log)'  | `insert` | `col`
+| <Plug>(lnr_insert_log)  | `insert` | `col`
 | <Plug>(lnr_insert_info)  | `insert` | `coi`
 | <Plug>(lnr_insert_wanr)  | `insert` | `cow`
 | <Plug>(lnr_insert_error)  | `insert` | `coe`
