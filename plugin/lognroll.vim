@@ -4,13 +4,13 @@
 " Last Change:		2019 January 19
 
 " Sanity Checks
-if exists('g:loaded_lognroll_vim')
+if exists('g:loaded_lognroll')
     finish
 endif
 
 " Set a special flag used only by this plugin for preventing doubly
 " loading the script.
-let g:loaded_lognroll_vim = 1
+let g:loaded_lognroll = 1
 
 " set the 'cpoptions' option to its Vim default value and restore it at the
 " end
