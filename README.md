@@ -104,6 +104,7 @@ console.log({ a, b })
 Yes.
 
 The following is the table of the available `<Plug>` command:
+
 | Plug command | Mode | Default Map |
 | ------------ | ---- | ----------- |
 | <Plug>(lnr_insert_log)'  | `insert` | `col`
