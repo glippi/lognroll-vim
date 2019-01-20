@@ -29,7 +29,7 @@ endif
 
   for action in g:lognroll_actions
     let s:firsLetter = action[0]
-    let s:plugCommand = "<Plug>(lnr_insert_" . action . ")"
+    let s:plugCommand = "<Plug>(lnr_normal_" . action . ")"
     let s:mapping = "co" . s:firsLetter
 
     " <Plug> mappings
