@@ -13,7 +13,7 @@ if get (g:,'lognroll_vim#enable_insert_mode', 1)
     let s:mapping = "co" . s:firsLetter
 
     " <Plug> mappings
-    execute "inoremap <silent> <expr> " . s:plugCommand . " lognroll#BuildInsertMappings(". g:lognroll_console . ',' . action ")"
+    execute "inoremap <silent> <expr> " . s:plugCommand . " lognroll#BuildInsertMappings(". "'" . g:lognroll_console . "'" . ',' . "'" .  action . "'" . ")"
     " default mappings
     if !hasmapto('<Plug>(lnr_insert_log)')
       execute "imap " . s:mapping . " " . s:plugCommand
