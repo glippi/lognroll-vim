@@ -6,18 +6,18 @@ function! lognroll#BuildInsertMappings(console, logType)
   endif
 endfunction
 
-function! lognroll#BuildNormalMappings(logType)
+function! lognroll#BuildNormalMappings(console, logType)
   if get(g:, 'lognroll_vim#enable_brackets', '1')
-    execute "normal! yiwoconsole." . a:logType . "({ })\<C-[>F{a\<space>\<C-[>p<CR>"
+    execute "normal! yiwo" . a:console . "." . a:logType . "({ })\<C-[>F{a\<space>\<C-[>p<CR>"
   else
-    execute "normal! yiwoconsole." . a:logType . "( )\<C-[>F(a\<space>\<C-[>p<CR>"
+    execute "normal! yiwo" . a:console . "." . a:logType . "( )\<C-[>F(a\<space>\<C-[>p<CR>"
   endif
 endfunction
 
-function! lognroll#BuildNormalMappingsArgs(logType)
+function! lognroll#BuildNormalMappingsArgs(console, logType)
   if get(g:, 'lognroll_vim#enable_brackets', '1')
-    execute "normal! yi(oconsole." . a:logType . "({ })\<C-[>F{a\<space>\<C-[>p<CR>"
+    execute "normal! yi(o" . a:console . "." . a:logType . "({ })\<C-[>F{a\<space>\<C-[>p<CR>"
   else
-    execute "normal! yi(oconsole." . a:logType . "( )\<C-[>F(a\<space>\<C-[>p<CR>"
+    execute "normal! yi(o" . a:console . "." . a:logType . "( )\<C-[>F(a\<space>\<C-[>p<CR>"
   endif
 endfunction
