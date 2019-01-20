@@ -1,27 +1,25 @@
+let g:lognroll_console = 'console'
+let g:lognroll_actions = [ 'log',  'info',  'warn',  'error' ]
+
 " " " " " " " "
 " INSERT MODE "
 " " " " " " " "
 
 if get (g:,'lognroll_vim#enable_insert_mode', 1)
-" <Plug> mappings
-  inoremap <silent> <expr> <Plug>(lnr_insert_log)   lognroll#BuildInsertMappings("log")
-  inoremap <silent> <expr> <Plug>(lnr_insert_info)  lognroll#BuildInsertMappings("info")
-  inoremap <silent> <expr> <Plug>(lnr_insert_warn)  lognroll#BuildInsertMappings("warn")
-  inoremap <silent> <expr> <Plug>(lnr_insert_error) lognroll#BuildInsertMappings("error")
 
-  " default mappings
-  if !hasmapto('<Plug>(lnr_insert_log)')
-    imap col <Plug>(lnr_insert_log)
-  endif
-  if !hasmapto('<Plug>(lnr_insert_info)')
-    imap coi <Plug>(lnr_insert_info)
-  endif
-  if !hasmapto('<Plug>(lnr_insert_warn)')
-    imap cow <Plug>(lnr_insert_warn)
-  endif
-  if !hasmapto('<Plug>(lnr_insert_error)')
-    imap coe <Plug>(lnr_insert_error)
-  endif
+  for action in g:lognroll_actions
+    let s:firsLetter = action[0]
+    let s:plugCommand = "<Plug>(lnr_insert_" . action . ")"
+    let s:mapping = "co" . s:firsLetter
+
+    " <Plug> mappings
+    execute "inoremap <silent> <expr> " . s:plugCommand . " lognroll#BuildInsertMappings('" . action . "')"
+    " default mappings
+    if !hasmapto('<Plug>(lnr_insert_log)')
+      execute "imap " . s:mapping . " " . s:plugCommand
+    endif
+  endfor
+
 endif
 
 
