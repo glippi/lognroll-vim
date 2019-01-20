@@ -54,7 +54,7 @@ console.log({ dumbString })
 
 &nbsp;&nbsp;&nbsp;&nbsp;`let g:lognroll#enable_brackets = 0`
 
-## Is it possible to use a custom logger?
+## It's possible to use a custom logger?
 Yes.
 
 Maybe you don't want to rely on default console, and you prefer tools like `PinoJS`. Well, just specify in the `.vimrc` the name of the console you want to use like this:
@@ -65,7 +65,7 @@ Now typing `col` will produce the following output:
 
 &nbsp;&nbsp;&nbsp;&nbsp;`pino.log({ dumbString })`
 
-## Is it possible to specify the methods of the console?
+## It's possible to specify the methods of the console?
 Yes.
 
 If you want to use also `console.dir()` besides the default methods, you just have to enumerate in the `.vimrc` all the methods you want to use, like this:
@@ -86,7 +86,7 @@ Also, be aware that all the new methods you add will have as mappings the same r
 &nbsp;&nbsp;&nbsp;&nbsp;`cot`
 
 
-## Is it possible to log all the variables of a function?
+## It's possible to log all the variables of a function?
 Yes.
 
 While `col` will log only the `word` you are on, `cola` will log all the *a*rguments of the function. The result will be the following:
@@ -100,7 +100,7 @@ console.log({ a, b })
 
 :warning: Pay attention to position the cursor inside the brackets of the function call, anywhere inside the brackets, but inside the brackets, as the relative vim mapping is `yi(`, that yanks everything inside the brackets.
 
-## Is it possible to overwrite default mappings?
+## It's possible to overwrite default mappings?
 Yes.
 
 The following is the table of the available `<Plug>` command:
