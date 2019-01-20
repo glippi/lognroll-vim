@@ -7,7 +7,7 @@ let g:lognroll_js_actions =
 " " " " " " " "
 " INSERT MODE "
 " " " " " " " "
-if get (g:,'lognroll_vim#enable_insert_mode', 1)
+if get (g:,'lognroll#enable_insert_mode', 1)
 
   for action in g:lognroll_js_actions
     let s:firsLetter = action[0]
