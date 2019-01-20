@@ -1,8 +1,8 @@
-function! lognroll#BuildInsertMappings(logType)
+function! lognroll#BuildInsertMappings(console, logType)
   if get(g:, 'lognroll_vim#enable_brackets', '1')
-    return "console." . a:logType . "({ })\<C-[>F{\a\<space>"
+    return a:console . "." . a:logType . "({ })\<C-[>F{\a\<space>"
   else
-    return "console." . a:logType . "( )\<C-[>F(\a\<space>"
+    return a:console . "." . a:logType . "( )\<C-[>F(\a\<space>"
   endif
 endfunction
 
