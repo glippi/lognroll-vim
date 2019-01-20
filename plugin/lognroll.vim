@@ -18,11 +18,11 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Define wether the mappings should be active for INSERT MODE or not
-let g:lognroll_vim#enable_insert_mode =
-\ get(g:, 'lognroll_vim#enable_insert_mode', 1)
+let g:lognroll#enable_insert_mode =
+\ get(g:, 'lognroll#enable_insert_mode', 1)
 
 "Define wether the variable should be logged inside curly brackets or not
-let g:lognroll_vim#enable_brackets =
-\ get(g:, 'lognroll_vim#enable_brackets', 1)
+let g:lognroll#enable_brackets =
+\ get(g:, 'lognroll#enable_brackets', 1)
 
 let &cpo = s:save_cpo
