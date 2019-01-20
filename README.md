@@ -109,15 +109,15 @@ The following is the table of the available `<Plug>` command:
 | ------------ | ---- | ----------- |
 | <Plug>(lnr_insert_log)  | `insert` | `col`
 | <Plug>(lnr_insert_info)  | `insert` | `coi`
-| <Plug>(lnr_insert_wanr)  | `insert` | `cow`
+| <Plug>(lnr_insert_warn)  | `insert` | `cow`
 | <Plug>(lnr_insert_error)  | `insert` | `coe`
 | <Plug>(lnr_normal_log)  | `normal` | `col`
 | <Plug>(lnr_normal_info)  | `normal` | `coi`
-| <Plug>(lnr_normal_wanr)  | `normal` | `cow`
+| <Plug>(lnr_normal_warn)  | `normal` | `cow`
 | <Plug>(lnr_normal_error)  | `normal` | `coe`
 | <Plug>(lnr_normal_logargs)  | `normal` | `cola`
 | <Plug>(lnr_normal_infoargs)  | `normal` | `coia`
-| <Plug>(lnr_normal_wanrargs)  | `normal` | `cowa`
+| <Plug>(lnr_normal_warnargs)  | `normal` | `cowa`
 | <Plug>(lnr_normal_errorargs)  | `normal` | `coea`
 
 For example, If you want to remap the mapping in `NORMAL` mode for `console.log` from `col` to `ll`, add this line to your `.vimrc`:
