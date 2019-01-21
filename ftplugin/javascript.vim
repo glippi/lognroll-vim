@@ -29,7 +29,6 @@ for action in g:lognroll_js_actions
 " " " " " " " "
 " NORMAL MODE "
 " " " " " " " "
-<<<<<<< HEAD
     " <Plug> mappings
     execute "nnoremap <silent> " . s:plugCommand . " :<C-U>call lognroll#BuildNormalMappings(". "'" . g:lognroll_js_console . "'" . ',' . "'" .  action . "'" . ")<CR>"
     " default mappings
