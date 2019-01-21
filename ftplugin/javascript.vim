@@ -33,14 +33,13 @@ endif
     let s:firsLetter = action[0]
     let s:plugCommand = "<Plug>(lnr_normal_" . action . ")"
     let s:mapping = "co" . s:firsLetter
-    let s:test = s:plugCommand . " " . s:mapping
 
     " <Plug> mappings
     execute "nnoremap <silent> " . s:plugCommand . " :<C-U>call lognroll#BuildNormalMappings(". "'" . g:lognroll_js_console . "'" . ',' . "'" .  action . "'" . ")<CR>"
 
     " default mappings
     if !hasmapto(s:mapping) && maparg(s:mapping, 'n') ==# ''
-      execute "nmap " . s:mapping . " " . s:plugCommand . ""
+      execute "nmap \\" . s:mapping . " " . s:plugCommand . ""
     endif
 
   endfor
