@@ -39,7 +39,7 @@ endif
 
     " default mappings
     if !hasmapto("'" . s:mapping . "'") && maparg(s:mapping, 'n') ==# ''
-      execute "nmap " . s:mapping . " " . s:plugCommand
+      nmap " . s:mapping . " " . s:plugCommand
     endif
 
   endfor
