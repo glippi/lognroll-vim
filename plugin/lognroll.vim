@@ -1,7 +1,7 @@
 " Vim filetype plugin
 " Language:		JavaScript
 " Maintainer:		Gabriele Lippi
-" Last Change:		2019 January 19
+" Last Change:		2019 January 21
 
 " Sanity Checks
 if exists('g:loaded_lognroll')
