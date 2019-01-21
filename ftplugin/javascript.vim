@@ -35,7 +35,7 @@ endif
     let s:mapping = "co" . s:firsLetter
 
     " default mappings
-    if !hasmapto(s:mapping)
+    if !hasmapto(s:mapping) && maparg(s:mapping,'n') ==# ''
       execute "nmap " . s:mapping . " " . s:plugCommand
     endif
 
