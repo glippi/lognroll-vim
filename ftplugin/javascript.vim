@@ -39,8 +39,8 @@ endif
     execute "nnoremap <silent> " . s:plugCommand . " :<C-U>call lognroll#BuildNormalMappings(". "'" . g:lognroll_js_console . "'" . ',' . "'" .  action . "'" . ")<CR>"
 
     " default mappings
-    if !hasmapto("'" . s:mapping . "'") && maparg(s:mapping, 'n') ==# ''
-      nmap s:test
+    if !hasmapto(s:mapping) && maparg(s:mapping, 'n') ==# ''
+      execute "nmap " . s:mapping . " " . s:plugCommand . ""
     endif
 
   endfor
