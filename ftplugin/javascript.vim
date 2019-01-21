@@ -11,9 +11,9 @@ for action in g:lognroll_js_actions
     let s:plugCommand = "<Plug>(lnr_normal_" . action . ")"
     let s:plugCommandAllArgs = "<Plug>(lnr_normal_" . action . "args)"
 
-" " " " " " " "
-" INSERT MODE "
-" " " " " " " "
+    " " " " " " " "
+    " INSERT MODE "
+    " " " " " " " "
     if get (g:,'lognroll#enable_insert_mode', 1)
         let s:plugCommand = "<Plug>(lnr_insert_" . action . ")"
 
@@ -21,25 +21,25 @@ for action in g:lognroll_js_actions
         execute "inoremap <silent> <expr> " . s:plugCommand . " lognroll#BuildInsertMappings(". "'" . g:lognroll_js_console . "'" . ',' . "'" .  action . "'" . ")"
         " default mappings
         if !hasmapto(s:mapping) && (mapcheck(s:mapping, "i") == "")
-          execute "imap " . s:mapping . " " . s:plugCommand
+          execute "imap <unique> " . s:mapping . " " . s:plugCommand
         endif
 
     endif
 
-" " " " " " " "
-" NORMAL MODE "
-" " " " " " " "
+    " " " " " " " "
+    " NORMAL MODE "
+    " " " " " " " "
     " <Plug> mappings
     execute "nnoremap <silent> " . s:plugCommand . " :<C-U>call lognroll#BuildNormalMappings(". "'" . g:lognroll_js_console . "'" . ',' . "'" .  action . "'" . ")<CR>"
     " default mappings
     if !hasmapto(s:mapping) && (mapcheck(s:mapping,'n') == '')
-      execute "nmap " . s:mapping . " " . s:plugCommand
+      execute "nmap <unique> " . s:mapping . " " . s:plugCommand
     endif
 
     " <Plug> mappings
     execute "nnoremap <silent> " . s:plugCommandAllArgs . " :<C-U>call lognroll#BuildNormalMappingsArgs(". "'" . g:lognroll_js_console . "'" . ',' . "'" .  action . "'" . ")<CR>"
     " default mappings
     if !hasmapto(s:mappingAllArgs) && (mapcheck(s:mappingAllArgs, "n") == "")
-      execute "nmap " . s:mappingAllArgs . " " . s:plugCommandAllArgs
+      execute "nmap <unique> " . s:mappingAllArgs . " " . s:plugCommandAllArgs
     endif
 endfor
