@@ -20,7 +20,7 @@ for action in g:lognroll_js_actions
         " <Plug> mappings
         execute "inoremap <silent> <expr> " . s:plugCommand . " lognroll#BuildInsertMappings(". "'" . g:lognroll_js_console . "'" . ',' . "'" .  action . "'" . ")"
         " default mappings
-        if !hasmapto(s:mapping) && (mapcheck(s:mapping, "i") == "")
+        if !hasmapto(s:plugCommand) && (mapcheck(s:mapping, "i") == "")
           execute "imap <unique> " . s:mapping . " " . s:plugCommand
         endif
 
@@ -32,14 +32,14 @@ for action in g:lognroll_js_actions
     " <Plug> mappings
     execute "nnoremap <silent> " . s:plugCommand . " :<C-U>call lognroll#BuildNormalMappings(". "'" . g:lognroll_js_console . "'" . ',' . "'" .  action . "'" . ")<CR>"
     " default mappings
-    if !hasmapto(s:mapping) && (mapcheck(s:mapping,'n') == '')
+    if !hasmapto(s:plugCommand) && (mapcheck(s:mapping,'n') == '')
       execute "nmap <unique> " . s:mapping . " " . s:plugCommand
     endif
 
     " <Plug> mappings
     execute "nnoremap <silent> " . s:plugCommandAllArgs . " :<C-U>call lognroll#BuildNormalMappingsArgs(". "'" . g:lognroll_js_console . "'" . ',' . "'" .  action . "'" . ")<CR>"
     " default mappings
-    if !hasmapto(s:mappingAllArgs) && (mapcheck(s:mappingAllArgs, "n") == "")
+    if !hasmapto(s:plugCommandAllArgs) && (mapcheck(s:mappingAllArgs, "n") == "")
       execute "nmap <unique> " . s:mappingAllArgs . " " . s:plugCommandAllArgs
     endif
 endfor
